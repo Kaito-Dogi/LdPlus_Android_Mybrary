@@ -7,7 +7,7 @@ import java.util.*
 open class Post(
     @PrimaryKey open var id: String = UUID.randomUUID().toString(),
     open var nowPage: Int = 0,
-    open var nowPersent: Int = 0,
+    open var nowPersent: Int= 0,
     open var sentence1: String = "",
     open var sentence2: String = "",
     open var sentence3: String = "",

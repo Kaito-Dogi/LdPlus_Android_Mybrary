@@ -1,6 +1,8 @@
 package com.doggy.mybrary
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
@@ -13,7 +15,10 @@ import io.realm.RealmResults
 import io.realm.Sort
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_start.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.content_main.titleTextView
+import kotlinx.android.synthetic.main.content_main.totalPageTextView
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +32,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        val dataStore: SharedPreferences = getSharedPreferences("DataStore", Context.MODE_PRIVATE)
+        titleTextView.text = dataStore.getString("Title", "")
+        totalPageTextView.text = dataStore.getString("Page", "")
+
         val PostList = readAll()
 
         // ポストリストが空だったときにダミーデータを生成する
@@ -39,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             PostAdapter(this, PostList, object : PostAdapter.OnItemClickListener {
                 override fun onItemClick(item: Post) {
                     // クリックした処理を書く
-                    Toast.makeText(this@MainActivity, "削除しました", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@MainActivity, "It has been deleted.", Toast.LENGTH_SHORT)
                         .show()
                     delete(item)
                 }
@@ -75,16 +84,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun createDummyData() {
-        for (i in 0..10) {
-            create(i, i, "感想 $i", "要約 $i", "その他 $i")
-        }
+        create(0, "Welcome to Mybrary!", "Let's write freely your impressions, summary,", "or sometimes jokes!")
     }
 
-    fun create(nowPage: Int, nowPersent: Int, sentence1: String, sentence2: String, sentence3: String) {
+    fun create(nowPage: Int, sentence1: String, sentence2: String, sentence3: String) {
         realm.executeTransaction {
             val post = it.createObject(Post::class.java, UUID.randomUUID().toString())
             post.nowPage = nowPage
-            post.nowPersent = nowPersent
+            post.nowPersent = nowPage
             post.sentence1 = sentence1
             post.sentence2 = sentence2
             post.sentence3 = sentence3
@@ -107,10 +114,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun update(post: Post, nowPage: Int, nowPersent: Int, sentence1: String, sentence2: String, sentence3: String) {
+    fun update(post: Post, nowPage: Int, sentence1: String, sentence2: String, sentence3: String) {
         realm.executeTransaction {
             post.nowPage = nowPage
-            post.nowPersent = nowPersent
+            post.nowPersent = nowPage
             post.sentence1 = sentence1
             post.sentence2 = sentence2
             post.sentence3 = sentence3

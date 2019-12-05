@@ -9,9 +9,38 @@
         tools:showIn="@layout/activity_main"
         tools:context=".MainActivity">
 
-        <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                                android:id="@+id/titleTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="title" />
+
+                        <TextView
+                                android:id="@+id/totalPageTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="total pages" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

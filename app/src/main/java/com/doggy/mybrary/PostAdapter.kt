@@ -29,8 +29,8 @@ class PostAdapter(
         holder.container.setOnClickListener{
             listener.onItemClick(post)
         }
-        holder.pageTextView.text = post.nowPage.toString()
-        holder.persentTextView.text = post.nowPersent.toString()
+        holder.pageTextView.text = "～p" + post.nowPage.toString()
+        holder.persentTextView.text = post.nowPersent.toString() + "%"
         holder.sentence1TextView.text = post.sentence1
         holder.sentence2TextView.text = post.sentence2
         holder.sentence3TextView.text = post.sentence3
@@ -57,5 +57,4 @@ class PostAdapter(
     interface OnItemClickListener {
         fun onItemClick(item: Post)
     }
-
 }
