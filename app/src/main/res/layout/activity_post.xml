@@ -15,38 +15,58 @@
                 android:id="@+id/pageTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
                 android:ems="10"
-                android:hint="page?"
+                android:hint="How far have you read?"
                 android:inputType="number" />
 
         <EditText
                 android:id="@+id/sentence1TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:hint="write freely"
+                android:hint="Please write freely!"
                 android:inputType="textPersonName" />
 
         <EditText
                 android:id="@+id/sentence2TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
                 android:ems="10"
-                android:hint="write freely"
                 android:inputType="textPersonName" />
 
         <EditText
                 android:id="@+id/sentence3TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
                 android:ems="10"
-                android:hint="write freely"
                 android:inputType="textPersonName" />
 
         <Button
                 android:id="@+id/postButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="post" />
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/enter_button"
+                android:text="post"
+                android:textColor="@android:color/background_light" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

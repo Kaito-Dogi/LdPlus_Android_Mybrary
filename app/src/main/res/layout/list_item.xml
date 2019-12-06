@@ -20,33 +20,57 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true">
+
             <TextView
+                    android:id="@+id/pageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
                     android:text="~pX"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/pageTextView" android:layout_weight="1"
-                    android:textSize="36sp"/>
+                    android:textSize="36sp" />
+
             <TextView
-                    android:text="Y%"
+                    android:id="@+id/persentTextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/persentTextView" android:layout_weight="1"
-                    android:textSize="36sp"/>
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:text="Y%"
+                    android:textSize="36sp" />
         </LinearLayout>
+
         <TextView
-                android:text="write freely"
+                android:id="@+id/sentence1View"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/sentence1View" android:textSize="18sp"/>
-        <TextView
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:text="write freely"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/sentence2View" android:textSize="18sp"/>
+                android:textSize="16sp" />
+
         <TextView
+                android:id="@+id/sentence2View"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:text="write freely"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/sentence3View" android:textSize="18sp"/>
+                android:textSize="16sp" />
+
         <TextView
+                android:id="@+id/sentence3View"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="write freely"
+                android:textSize="16sp" />
+
+        <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="right"
                 android:text="2019/12/02 19:00:00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/dateTextView" android:textSize="12sp"
-                android:gravity="right"/>
+                android:textSize="12sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

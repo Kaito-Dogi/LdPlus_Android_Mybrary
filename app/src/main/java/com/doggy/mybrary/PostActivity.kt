@@ -31,7 +31,7 @@ class PostActivity : AppCompatActivity() {
 
         postButton.setOnClickListener {
             if (pageTextView.text.toString() == ""){
-                Toast.makeText(this@PostActivity, "How many pages have you read?", Toast.LENGTH_SHORT)
+                Toast.makeText(this@PostActivity, "How far have you read?", Toast.LENGTH_SHORT)
                     .show()
             } else{
                 val pageText = pageTextView.text.toString().toInt()

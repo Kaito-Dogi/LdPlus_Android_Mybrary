@@ -31,9 +31,9 @@ class PostAdapter(
         }
         holder.pageTextView.text = "～p" + post.nowPage.toString()
         holder.persentTextView.text = post.nowPersent.toString() + "%"
-        holder.sentence1TextView.text = post.sentence1
-        holder.sentence2TextView.text = post.sentence2
-        holder.sentence3TextView.text = post.sentence3
+        holder.sentence1TextView.text = "・" + post.sentence1
+        holder.sentence2TextView.text = "・" + post.sentence2
+        holder.sentence3TextView.text = "・" + post.sentence3
         holder.dateTextView.text =
             SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.JAPANESE).format(post.createdAt)
 
